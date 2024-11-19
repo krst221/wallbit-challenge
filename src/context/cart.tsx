@@ -59,8 +59,8 @@ function useCartReducer () {
 }
 
 export function CartProvider ({ children } : { children: React.ReactNode }) {
-  const dateString = JSON.parse(window.localStorage.getItem('date') ?? '')
-  const initialDate = dateString ? new Date(dateString) : new Date()
+  const dateString = window.localStorage.getItem('date')
+  const initialDate = dateString ? new Date(JSON.parse(dateString)) : new Date()
 
   const { state, addToCart, handleAmount, removeFromCart, clearCart } = useCartReducer()
   const [date, setDate] = useState<Date | null>(initialDate ?? null)
