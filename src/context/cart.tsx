@@ -59,18 +59,25 @@ function useCartReducer () {
 }
 
 export function CartProvider ({ children } : { children: React.ReactNode }) {
+  const dateString = JSON.parse(window.localStorage.getItem('date') ?? '')
+  const initialDate = dateString ? new Date(dateString) : new Date()
+
   const { state, addToCart, handleAmount, removeFromCart, clearCart } = useCartReducer()
-  const [date, setDate] = useState<Date | null>(null)
+  const [date, setDate] = useState<Date | null>(initialDate ?? null)
   const [modalData, setModalData] = useState<ModalData>({ open: false })
 
   useEffect(() => {
-    if (state.length > 0) {
-      saveToLocalStorage({ cart: state })
-      if (state.length === 1) {
+    saveToLocalStorage({ cart: state })
+
+    if (state.length === 1) {
+      if (!dateString) {
         const date = new Date()
         saveToLocalStorage({ date: date })
         setDate(date)
       }
+    } else if (state.length === 0) {
+      setDate(null)
+      saveToLocalStorage({ date: null })
     }
   }, [state])
 

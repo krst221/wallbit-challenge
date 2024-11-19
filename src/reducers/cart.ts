@@ -25,21 +25,16 @@ const UPDATE_STATE_BY_ACTION = {
       newState = [...structuredClone(state), action.payload.item as CartItem]
     }
 
-    saveToLocalStorage<CartItem[]>({ cart: newState })
     return newState
   },
 
   [CART_ACTION_TYPES.REMOVE_FROM_CART]: (state: CartItem[], action: CartAction) => {
     const id = action.payload.id!
     const newState = state.filter(item => item.id !== id)
-    saveToLocalStorage<CartItem[]>({ cart: newState })
     return newState
   },
 
-  [CART_ACTION_TYPES.CLEAR_CART]: () => {
-    saveToLocalStorage<CartItem[]>({ cart: [] })
-    return []
-  }
+  [CART_ACTION_TYPES.CLEAR_CART]: () => []
 }
 
 export const cartReducer = (state: CartItem[], action: CartAction) => {

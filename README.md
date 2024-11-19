@@ -22,6 +22,7 @@
 - Ver el precio total y la cantidad total de productos.
 - Vaciar el carro entero.
 - El carro se guarda y se actualiza en el localStorage.
+- Modal de confirmación de eliminación, toast informativo y manejo de errores.
 
 > En cuanto a la implementación técnica, el proyecto queda así:
 
