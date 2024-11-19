@@ -1,19 +1,19 @@
 <h1 align="center">Wallbit Junior Frontend Challenge</h1>
 
-## Índice
+# [Proyecto](https://wallbit-challenge.onrender.com/)
 
-- [Índice](#índice)
+# Índice
+
 - [Acerca del proyecto](#acerca-del-proyecto)
 - [Instalación](#instalación)
 - [Tests](#tests)
 - [Despliegue](#despliegue)
 - [Dependencias](#dependencias)
-- [Proyecto](#proyecto)
 
   
 ## Acerca del proyecto
 
-> Proyecto para el desafío de Wallbit Junior Frontend Challenge. El proyecto consiste en un carro de la compra con las siguientes funcionalidades:
+Proyecto para el desafío de Wallbit Junior Frontend Challenge. El proyecto consiste en un carro de la compra con las siguientes funcionalidades:
 
 - Añadir productos al carrito introduciendo un id y la cantidad deseada (entre 1 y 100).
 - Al crear un nuevo carro, se añade y se guarda la fecha de creación, hasta que se vacía.
@@ -23,7 +23,7 @@
 - Vaciar el carro entero.
 - El carro se guarda y se actualiza en el localStorage.
 
-> En cuanto a la implementación técnica, el proyecto queda así:
+En cuanto a la implementación técnica, el proyecto queda así:
 
 - Proyecto desarrollado enteramente con Typescript y completamente tipado.
 - Diseño completamente responsive y adaptado al uso y necesidades tanto de mobile como de desktop.
@@ -32,7 +32,9 @@
 - Conversión dinámica del formato de la fecha, basada en la localización del usuario.
 - Tests de integración para verificar el flujo completo de uso.
 
-[Puntuación perfecta en Lighthouse](https://ibb.co/bNBN9Bm)
+> Puntuacion perfecta en Lighthouse
+
+![Puntuación perfecta en Lighthouse](https://i.ibb.co/kq8qC8B/lighthouse.png)
 
 ## Instalación
 
@@ -77,5 +79,3 @@ pnpm build
 - React - Biblioteca de JavaScript para construir interfaces de usuario.
 - Tailwind CSS - Framework de CSS centrado en la utilidad.
 - Vitest y React Testing Library - Herramientas para testear tu web, con tests unitarios y de integración.
-
-## [Proyecto](https://wallbit-challenge.onrender.com/)
