@@ -10,7 +10,7 @@ export const formatDate = (date: Date | string): string => {
   const dateStr = date.toLocaleDateString(userLocale, {
     day: '2-digit',
     month: '2-digit',
-    year: 'numeric',
+    year: '2-digit',
   })
 
   const timeStr = date.toLocaleTimeString(userLocale, {

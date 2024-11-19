@@ -15,7 +15,7 @@
 
 Proyecto para el desafío de Wallbit Junior Frontend Challenge. El proyecto consiste en un carro de la compra con las siguientes funcionalidades:
 
-- Añadir productos al carrito introduciendo un id y la cantidad deseada (entre 1 y 100).
+- Añadir productos al carro introduciendo un id y la cantidad deseada (entre 1 y 100).
 - Al crear un nuevo carro, se añade y se guarda la fecha de creación, hasta que se vacía.
 - Eliminar productos del carro.
 - Modificar la cantidad de productos en el carro. Si se inserta un producto que ya existe, se añadirá la cantidad.

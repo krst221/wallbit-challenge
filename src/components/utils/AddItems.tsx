@@ -39,11 +39,11 @@ const AddItems: FC = () => {
       const existingItem = cart.find(i => i.id === id)     
       if (existingItem) {
         const amountToAdd = Math.min(existingItem.amount + amount, 100)
-        // Actualiza el item ya existente en el carrito
+        // Actualiza el item ya existente en el carro
         addToCart({...existingItem, amount: amountToAdd}, 'add')
         return
       }
-      // Haz el fetch si el item no esta en el carrito    
+      // Haz el fetch si el item no esta en el carro    
       const newItem = await FetchItem(Number(id), Number(amount))
       addToCart(newItem, 'update')
     } catch (error) {

@@ -24,7 +24,7 @@ const Cart: FC = () => {
         items-start w-[70%] md:min-w-[580px] max-w-[1200px]">
         <div className="flex items-start justify-between w-full pr-1">
           <h1 className="text-base md:text-xl xl:text-2xl">
-            Carrito de compra <span className="text-xl mr-2">🛒</span> 
+            Carro de compra <span className="text-xl mr-2">🛒</span> 
             {showDate && `Iniciado ${formatDate(date)}`}
           </h1>
           {cart.length > 0 &&

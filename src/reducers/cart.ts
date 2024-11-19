@@ -1,5 +1,3 @@
-import { saveToLocalStorage } from "@/helpers/local-storage"
-
 const cartFromLocalStorage = window.localStorage.getItem('cart')
 
 export const cartInitialState: CartItem[] = cartFromLocalStorage
@@ -20,18 +18,14 @@ const UPDATE_STATE_BY_ACTION = {
     let newState = structuredClone(state)
 
     if (existingItemIndex >= 0) newState[existingItemIndex] = action.payload.item!
-    else {
-      if (state.length === 0) saveToLocalStorage<Date>({ date : new Date() })
-      newState = [...structuredClone(state), action.payload.item as CartItem]
-    }
+    else newState = [...structuredClone(state), action.payload.item as CartItem]
 
     return newState
   },
 
   [CART_ACTION_TYPES.REMOVE_FROM_CART]: (state: CartItem[], action: CartAction) => {
     const id = action.payload.id!
-    const newState = state.filter(item => item.id !== id)
-    return newState
+    return state.filter(item => item.id !== id)
   },
 
   [CART_ACTION_TYPES.CLEAR_CART]: () => []
