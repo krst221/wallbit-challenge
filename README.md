@@ -1,65 +1,81 @@
-[![Wallbit](./assets/logo.jpg)](https://wallbit.io/)
+<h1 align="center">Wallbit Junior Frontend Challenge</h1>
 
-> El banco digital para trabajadores remotos.
+## Índice
 
-# Wallbit Junior Frontend Challenge
+- [Índice](#índice)
+- [Acerca del proyecto](#acerca-del-proyecto)
+- [Instalación](#instalación)
+- [Tests](#tests)
+- [Despliegue](#despliegue)
+- [Dependencias](#dependencias)
+- [Proyecto](#proyecto)
 
-Para este desafío, nuestro cliente nos encargó hacer un carrito de compras para programadores. Tiene un formulario con 2 campos: ID del producto y cantidad. Los programadores habitualmente no necesitan saber ni ver que productos comprar, sino que saben por conexiones astrales cual es el ID del producto que quieren y así los agregan a su carrito.
+  
+## Acerca del proyecto
 
-Cada vez que se agrega un producto, vamos a obtener el producto desde la API y lo vamos a mostrar en una tabla, junto a la cantidad que el usuario eligió.
+> Proyecto para el desafío de Wallbit Junior Frontend Challenge. El proyecto consiste en un carro de la compra con las siguientes funcionalidades:
 
-> Solo lo mostramos visualmente por si hay alguien que no sea programador mirando la pantalla.
+- Añadir productos al carrito introduciendo un id y la cantidad deseada (entre 1 y 100).
+- Al crear un nuevo carro, se añade y se guarda la fecha de creación, hasta que se vacía.
+- Eliminar productos del carro.
+- Modificar la cantidad de productos en el carro. Si se inserta un producto que ya existe, se añadirá la cantidad.
+- Ver el precio total y la cantidad total de productos.
+- Vaciar el carro entero.
+- El carro se guarda y se actualiza en el localStorage.
 
-La aplicación se vería así:
+> En cuanto a la implementación técnica, el proyecto queda así:
 
-![Sin productos](./assets/app-0.jpg)
-> Inicialmente no hay productos en el carrito
+- Proyecto desarrollado enteramente con Typescript y completamente tipado.
+- Diseño completamente responsive y adaptado al uso y necesidades tanto de mobile como de desktop.
+- Uso de createContext y useReducer para manejar el estado y las funcionalidades a nivel global.
+- Arquitectura CLEAN, principios SOLID, abstracción y parametrización de componentes.
+- Conversión dinámica del formato de la fecha, basada en la localización del usuario.
+- Tests de integración para verificar el flujo completo de uso.
 
-![Con productos](./assets/app-1.jpg)
-> Con productos en el carrito
+[Puntuación perfecta en Lighthouse](https://ibb.co/bNBN9Bm)
 
-## Requisitos
+## Instalación
 
-La API que nos dió nuestro cliente es: [Fake Store API](https://fakestoreapi.com/). El cliente nos dijo que su stack de frontend es React, que prefiere el challenge hecho con eso, pero está abierto a cualquier stack que quieras usar.
+Después de descargar e instalar [Node.js](https://nodejs.org/), ejecutar los siguientes comandos:
 
-- [ ] Podemos agregar productos al carrito.
-- [ ] Manejar errores que nos devuelva la API.
-- [ ] Mostrar una lista con los productos agregados incluyendo `title`, `price` e `image` del producto y la `cantidad` que el usuario agregó.
+Clonar el repositorio:
 
-## Extras
+```sh
+git clone https://github.com/krst221/wallbit-challenge
+```
 
-- [ ] El carrito se persiste al recargar la página.
-- [ ] Mostrar el total de productos agregados.
-- [ ] Mostrar el costo total del carrito.
-- [ ] Mostrar la fecha de creación del carrito.
+```sh
+cd wallbit-challenge
+```
 
-## Bonus
+Después de clonar el repositorio, instalar las dependencias y ejecutar el proyecto con los siguientes comandos:
 
-Para destacar, podés agregar cualquier cosa que se te ocurra que llame la atención. No tiene por qué ser necesariamente en el código, o una dependencia. Puede ser algo visual, un easter egg, una funcionalidad, o bueno, algo en el código.
+```sh
+pnpm install
+```
 
-> [!NOTE]
-> Siempre recordá que lo que agregues debe sumar a la experiencia del usuario y no complicar su navegación. Tenés que pensar que quien va a usar la aplicación no va a haber hablado con vos previamente y aun así debería poder usar la aplicación y obtener la mejor experiencia posible.
+```sh
+pnpm dev
+```
 
-## Entregables
+## Tests
 
-- [ ] Crear un Pull Request a este repositorio con tu solución.
-- [ ] Reemplazar el `README.md` con instrucciones para correr el proyecto e información relevante para la evaluación.
-- [ ] Incluir el link al deploy de tu aplicación.
+```sh
+pnpm test
+```
 
-## Premio
+## Despliegue
 
-Se va a entregar un premio en vivo durante [mi stream](https://twitch.tv/goncypozzo) el 19 de Noviembre de 2024 a las 19:00hs Argentina (GMT -3) entre todos los que completen el desafío. El premio va a ser un micrófono Razer Seiren Mini.
+```sh
+pnpm build
+```
 
-El ganador va a ser elegido por el chat, la gente de Wallbit y yo.
+## Dependencias
 
-> [!IMPORTANT]
-> El ganador debe estar presente en el stream para recibir el premio.
+- Pnpm - Gestor de paquetes.
+- Vite - Servidor de desarrollo local.
+- React - Biblioteca de JavaScript para construir interfaces de usuario.
+- Tailwind CSS - Framework de CSS centrado en la utilidad.
+- Vitest y React Testing Library - Herramientas para testear tu web, con tests unitarios y de integración.
 
-![Razer Seiren Mini](./assets/sorteo.jpg)
-
-> En caso de no poder enviarse el premio, se pagará el equivalente de 70 USD.
-
-El deadline para enviar el PR es el 19 de Noviembre de 2024 a las 15:00hs Argentina (GMT -3).
-
-> [!IMPORTANT]
-> Los PRs se cerrarán luego de esa hora así que no te olvides de hacerlo antes.
+## [Proyecto](https://wallbit-challenge.onrender.com/)
