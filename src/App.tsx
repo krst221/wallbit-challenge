@@ -8,13 +8,15 @@ function App() {
 
   return (
     <CartProvider>
-      <main className="flex items-center h-lvh justify-start flex-col">
-        <img 
-          className="w-[300px] sm:w-[400px] m-4 aspect-15/4" 
-          src={wallbit} 
-          alt="Fake Store API" 
-          loading="eager" 
-        />
+      <main className="flex items-center h-[calc(lvh)] justify-start flex-col">
+        <div className="flex items-center justify-start w-full mb-5 p-2 border-b border-b-gray-600">
+          <img 
+            className="w-[150px] sm:w-[200px] aspect-15/4" 
+            src={wallbit} 
+            alt="Fake Store API" 
+            loading="eager" 
+          />
+        </div>
         <AddItems />
         <Cart />
         <Toaster richColors/>

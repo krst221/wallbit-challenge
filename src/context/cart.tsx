@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer, useState } from 'react'
 import { cartReducer, cartInitialState } from '../reducers/cart.js'
 import { toast } from 'sonner'
-import { saveToLocalStorage } from '@/helpers/local-storage.js'
+import { getInitialDate, saveToLocalStorage } from '@/helpers/local-storage.js'
 
 interface CartContextType {
   cart: CartItem[]
@@ -32,8 +32,17 @@ function useCartReducer () {
   
   const addToCart = (item: CartItem, type?: string) => {
     dispatch({ type: 'ADD_TO_CART', payload: { item }})
-    if (type === 'add') toast.success('Producto añadido correctamente')
-    else if (type === 'update') toast.success('Producto actualizado correctamente')
+    
+    if (type === 'add') {
+      toast.success('Producto añadido correctamente', {
+        description: <strong>{item.title}</strong>,
+      });
+    }
+    else if (type === 'update') {
+      toast.success('Producto actualizado correctamente', {
+        description: <strong>{item.title}</strong>,
+      });
+    }
   }
 
   const handleAmount = (type: string, id: number) => {
@@ -59,18 +68,15 @@ function useCartReducer () {
 }
 
 export function CartProvider ({ children } : { children: React.ReactNode }) {
-  const dateString = window.localStorage.getItem('date')
-  const initialDate = dateString ? new Date(JSON.parse(dateString)) : new Date()
-
   const { state, addToCart, handleAmount, removeFromCart, clearCart } = useCartReducer()
-  const [date, setDate] = useState<Date | null>(initialDate)
+  const [date, setDate] = useState<Date | null>(getInitialDate())
   const [modalData, setModalData] = useState<ModalData>({ open: false })
 
   useEffect(() => {
     saveToLocalStorage({ cart: state })
 
     if (state.length === 1) {
-      if (dateString === "null") {
+      if (date === null) {
         const date = new Date()
         saveToLocalStorage({ date: date })
         setDate(date)

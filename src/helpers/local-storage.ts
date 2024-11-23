@@ -10,3 +10,8 @@ export const saveToLocalStorage = <T,>(data: { [key: string]: T }) => {
     else toast.error('Error saving to localStorage')
   }
 }
+
+export const getInitialDate = (): Date | null => {
+  const dateString = window.localStorage.getItem('date')
+  return dateString ? new Date(JSON.parse(dateString)) : null
+}

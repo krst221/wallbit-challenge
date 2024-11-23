@@ -55,43 +55,43 @@ const CartTable: FC = () => {
 
 
   return (
-    <div className="hidden md:block flex-1 w-full min-h-0 overflow-auto pr-1">
+    <div className="hidden md:block flex-1 w-full min-h-0 overflow-auto max-h-[35vh] bg-gray-950">
 			<table className="w-full border-collapse">
-				<thead className="sticky top-0 border-b bg-black z-10">
+				<thead className="sticky top-0 border-b z-10">
 					<tr className="border-b after:absolute after:bottom-[-2px] 
 					after:left-0 after:right-0 after:h-px after:bg-gray-200">
 						<th 
-							className="text-left p-2 whitespace-nowrap cursor-pointer text-gray-400 hover:bg-gray-900"
+							className="text-left font-semibold p-2 whitespace-nowrap cursor-pointer bg-gray-950 text-gray-400 hover:bg-gray-900"
 							onClick={() => handleSort('amount')}
 						>
 							Cantidad
 							<SortArrow column="amount" />
 						</th>
 						<th 
-							className="text-left p-2 whitespace-nowrap cursor-pointer text-gray-400 hover:bg-gray-900"
+							className="text-left font-semibold p-2 whitespace-nowrap cursor-pointer bg-gray-950 text-gray-400 hover:bg-gray-900"
 							onClick={() => handleSort('title')}
 						>
 							Nombre
 							<SortArrow column="title" />
 						</th>
 						<th 
-							className="text-left p-2 whitespace-nowrap cursor-pointer text-gray-400 hover:bg-gray-900"
+							className="text-left font-semibold p-2 whitespace-nowrap cursor-pointer bg-gray-950 text-gray-400 hover:bg-gray-900"
 							onClick={() => handleSort('price')}
 						>
 							Precio U
 							<SortArrow column="price" />
 						</th>
 						<th 
-							className="text-left p-2 whitespace-nowrap cursor-pointer text-gray-400 hover:bg-gray-900"
+							className="text-left font-semibold p-2 whitespace-nowrap cursor-pointer bg-gray-950 text-gray-400 hover:bg-gray-900"
 							onClick={() => handleSort('total')}
 						>
 							Precio T
 							<SortArrow column="total" />
 						</th>
-						<th className="text-center p-2 whitespace-nowrap text-gray-400">
+						<th className="text-center p-2 font-semibold whitespace-nowrap bg-gray-950 text-gray-400">
 							Foto
 						</th>
-						<th className="text-center p-2 whitespace-nowrap text-gray-400">Eliminar</th>
+						<th className="text-center p-2 font-semibold whitespace-nowrap bg-gray-950 text-gray-400">Eliminar</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -18,5 +18,12 @@ export const formatDate = (date: Date | string): string => {
     minute: '2-digit',
   })
 
-  return `${dateStr} - ${timeStr}`
+  return `${dateStr} ${timeStr}`
+}
+
+export const formatPrice = (price: number): string => {
+  return price.toLocaleString('en-US', {
+    currency: 'USD',
+    style: 'currency',
+  })
 }

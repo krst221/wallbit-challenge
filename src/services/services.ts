@@ -1,6 +1,6 @@
 import { BASE_URL } from "./config"
 
-export const FetchItem = async (id: number, amount: number): Promise<CartItem> => {
+export const FetchCartItem = async (id: number, amount: number): Promise<CartItem> => {
   if (!id || typeof id !== 'number') {
     throw new Error('El id introducido es inválido')
   }
@@ -12,9 +12,7 @@ export const FetchItem = async (id: number, amount: number): Promise<CartItem> =
   try {
     const response = await fetch(`${BASE_URL}/${id}`)
     
-    if (!response.ok) {
-      throw new Error(`Error obteniendo el item ${response.statusText}`)
-    }
+    if (!response.ok) throw new Error()
 
     const item: CartItem = await response.json()
 
@@ -22,6 +20,6 @@ export const FetchItem = async (id: number, amount: number): Promise<CartItem> =
     return item
 
   } catch (error) {
-    throw error
+    throw new Error()
   }
 }

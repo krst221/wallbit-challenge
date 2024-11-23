@@ -1,7 +1,8 @@
 import { FC } from 'react'
-import AmountButtons from '../../utils/AmountButtons'
 import { useCart } from '@/hooks/useCart'
-import ItemImage from '@/components/utils/ItemImage'
+import ItemImage from '@/components/cart/ItemImage'
+import { formatPrice } from '@/utils/format'
+import AmountButtons from '../AmountButtons'
 
 interface Props {
   item: CartItem
@@ -15,23 +16,14 @@ const TableItem: FC<Props> = ({ item }) => {
     <tr className="border-b text-left">
       <td className="p-2 w-[115px]">
         <div className="flex items-center gap-1">
-          <p className="ml-1 font-medium w-[30px]">{amount}</p>
-          <AmountButtons id={id} amount={amount} />
+          <AmountButtons id={id} amount={amount}>
+            <p className="font-bold w-[28px] text-center">{amount}</p>
+          </AmountButtons>
         </div>
       </td>
-      <td className="p-2">{title}</td>
-      <td className="p-2">
-        {price.toLocaleString("en-US", {
-          currency: "USD",
-          style: "currency"
-        })}
-      </td>
-      <td className="p-2">
-        {(price * amount).toLocaleString("en-US", {
-          currency: "USD",
-          style: "currency"
-        })}
-      </td>
+      <td className="p-2 font-bold">{title}</td>
+      <td className="p-2 font-bold">{formatPrice(price)}</td>
+      <td className="p-2 font-bold">{formatPrice(price * amount)}</td>
       <td className="p-2">
         <ItemImage image={image} title={title} />
       </td>

@@ -3,13 +3,28 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Poppins';
-  src: url(./fonts/poppins.woff2) format('woff2');
+  font-family: 'Nunito';
+  src: url(./fonts/nunito-500.woff2) format('woff2');
+  font-weight: 500;
 }
 
+@font-face {
+  font-family: 'Nunito';
+  src: url(./fonts/nunito-600.woff2) format('woff2');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url(./fonts/nunito-700.woff2) format('woff2');
+  font-weight: 700;
+}
+
+
 :root {
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  font-weight: 500;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -47,16 +62,24 @@ button, input {
   font-weight: inherit;
   line-height: inherit;
   color: inherit;
-  border: 0;
   cursor: pointer;
 }
 
 input {
   padding-left: 0.5rem;
+  background-color: rgb(3, 7, 18);
 }
 
 h1, h2, h3, h4, h5, h6, p {
   text-wrap: pretty;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 600;
 }
 ::-webkit-scrollbar {
   width: 6px;
